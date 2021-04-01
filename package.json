@@ -1,0 +1,33 @@
+{
+  "name": "restaurant_forum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ben7152000/restaurant_forum.git"
+  },
+  "keywords": [],
+  "author": "Ben",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ben7152000/restaurant_forum/issues"
+  },
+  "homepage": "https://github.com/ben7152000/restaurant_forum#readme"
+}
