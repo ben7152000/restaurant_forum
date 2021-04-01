@@ -3,6 +3,7 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const flash = require('connect-flash')
 const session = require('express-session')
+const passport = require('./config/passport')
 const app = express()
 
 const PORT = 3000
@@ -14,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.use(session({ secret: 'Secret', resave: false, saveUninitialized: false }))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(flash())
 
 app.use((req, res, next) => {
