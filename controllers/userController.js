@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs')
+const passport = require('passport')
 const db = require('../models')
 const User = db.User
 
@@ -34,10 +35,13 @@ const userController = {
     res.render('signin')
   },
 
-  signIn: (req, res) => {
-    req.flash('success_messages', '成功登入！')
-    res.redirect('/restaurants')
-  },
+  signIn:
+    passport.authenticate('local',
+      {
+        successRedirect: '/restaurants',
+        failureRedirect: '/signin',
+        failureFlash: true
+      }),
 
   logout: (req, res) => {
     req.flash('success_messages', '登出成功！')

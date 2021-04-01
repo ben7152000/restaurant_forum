@@ -5,8 +5,6 @@ const restController = require('../controllers/restController')
 const adminController = require('../controllers/adminController')
 const userController = require('../controllers/userController')
 
-const { passportCheck } = require('../middlewares/auth')
-
 router.get('/', (req, res) => res.redirect('/restaurants'))
 router.get('/admin', (req, res) => res.redirect('/admin/restaurants'))
 
@@ -17,7 +15,7 @@ router.get('/admin/restaurants', adminController.getRestaurants)
 router.get('/signup', userController.signUpPage)
 router.post('/signup', userController.signUp)
 router.get('/signin', userController.signInPage)
-router.post('/signin', passportCheck, userController.signIn)
+router.post('/signin', userController.signIn)
 router.get('/logout', userController.logout)
 
 module.exports = router
