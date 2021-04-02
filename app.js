@@ -3,6 +3,7 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const flash = require('connect-flash')
 const session = require('express-session')
+const methodOverride = require('method-override')
 const userPassport = require('./config/passport')
 
 const app = express()
@@ -16,6 +17,8 @@ app.use(bodyParser.json())
 
 app.use(session({ secret: 'Secret', resave: false, saveUninitialized: false }))
 app.use(flash())
+
+app.use(methodOverride('_method'))
 
 userPassport(app)
 

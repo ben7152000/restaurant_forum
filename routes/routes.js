@@ -16,6 +16,8 @@ router.get('/admin/restaurants', authenticatedAdmin, adminController.getRestaura
 router.get('/admin/restaurants/create', authenticatedAdmin, adminController.createRestaurant)
 router.post('/admin/restaurants', authenticatedAdmin, adminController.postRestaurant)
 router.get('/admin/restaurants/:id', authenticatedAdmin, adminController.getRestaurant)
+router.get('/admin/restaurants/:id/edit', authenticatedAdmin, adminController.editRestaurant)
+router.put('/admin/restaurants/:id', authenticatedAdmin, adminController.putRestaurant)
 
 router.get('/signup', userController.signUpPage)
 router.post('/signup', userController.signUp)
