@@ -1,4 +1,6 @@
 const express = require('express')
+const multer = require('multer')
+const upload = multer({ dest: 'temp/' })
 const router = express.Router()
 
 const restController = require('../controllers/restController')
@@ -14,10 +16,10 @@ router.get('/restaurants', authenticated, restController.getRestaurants)
 
 router.get('/admin/restaurants', authenticatedAdmin, adminController.getRestaurants)
 router.get('/admin/restaurants/create', authenticatedAdmin, adminController.createRestaurant)
-router.post('/admin/restaurants', authenticatedAdmin, adminController.postRestaurant)
+router.post('/admin/restaurants', authenticatedAdmin, upload.single('image'), adminController.postRestaurant)
 router.get('/admin/restaurants/:id', authenticatedAdmin, adminController.getRestaurant)
 router.get('/admin/restaurants/:id/edit', authenticatedAdmin, adminController.editRestaurant)
-router.put('/admin/restaurants/:id', authenticatedAdmin, adminController.putRestaurant)
+router.put('/admin/restaurants/:id', authenticatedAdmin, upload.single('image'), adminController.putRestaurant)
 router.delete('/admin/restaurants/:id', authenticatedAdmin, adminController.deleteRestaurant)
 
 router.get('/signup', userController.signUpPage)
