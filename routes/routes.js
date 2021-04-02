@@ -18,6 +18,7 @@ router.post('/admin/restaurants', authenticatedAdmin, adminController.postRestau
 router.get('/admin/restaurants/:id', authenticatedAdmin, adminController.getRestaurant)
 router.get('/admin/restaurants/:id/edit', authenticatedAdmin, adminController.editRestaurant)
 router.put('/admin/restaurants/:id', authenticatedAdmin, adminController.putRestaurant)
+router.delete('/admin/restaurants/:id', authenticatedAdmin, adminController.deleteRestaurant)
 
 router.get('/signup', userController.signUpPage)
 router.post('/signup', userController.signUp)
