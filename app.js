@@ -9,6 +9,9 @@ const userPassport = require('./config/passport')
 const app = express()
 const PORT = 3000
 
+// eslint-disable-next-line node/no-path-concat
+app.use('/upload', express.static(__dirname + '/upload'))
+
 app.engine('handlebars', handlebars())
 app.set('view engine', 'handlebars')
 
