@@ -7,7 +7,7 @@ const methodOverride = require('method-override')
 const userPassport = require('./config/passport')
 
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 // eslint-disable-next-line node/no-path-concat
 app.use('/upload', express.static(__dirname + '/upload'))
